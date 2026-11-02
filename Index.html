@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAISHALI HOUSE 22ND BATCH | VALIANTS</title>
+
+<style>
+:root {
+  --green: #123c32;
+  --dark: #07110e;
+  --gold: #d6a84f;
+  --light-gold: #ffe681;
+  --cream: #f5f2e9;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: #202a25;
+}
+
+header {
+  background:
+    linear-gradient(#07110ed9, #07110ed9),
+    url("1000091766.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 35px 18px;
+}
+
+.crest {
+  display: block;
+  width: min(300px, 85%);
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+.house-flag {
+  max-width: 460px;
+  min-height: 120px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #182117;
+  background: linear-gradient(135deg, #ffe778, #e7b92d, #c28a12);
+  border: 4px solid #fff0a0;
+  outline: 2px solid #8e6715;
+  box-shadow: 0 8px 24px #0007;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+}
+
+.flag-lion {
+  font-size: 48px;
+}
+
+.house-flag strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 5vw, 42px);
+  letter-spacing: 3px;
+}
+
+.house-flag small {
+  display: block;
+  margin-top: 6px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.kicker {
+  color: var(--gold);
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  font-size: clamp(32px, 6vw, 68px);
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+header p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.7;
+  color: #e2e9e3;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 13px;
+  background: var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #17241f;
+  font-weight: bold;
+  padding: 11px 18px;
+  border-radius: 25px;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--green);
+  color: white;
+}
+
+main {
+  max-width: 1240px;
+  margin: auto;
+  padding: 35px 24px 60px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(30px, 5vw, 65px);
+  border-radius: 18px;
+  color: white;
+  background:
+    linear-gradient(90deg, #07110ef5, #123c32dd),
+    url("1000091766.jpg") center/cover no-repeat;
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 13px;
+  border-radius: 25px;
+  background: var(--gold);
+  color: #17241f;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 5vw, 54px);
+  margin: 20px 0 12px;
+}
+
+.hero p {
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+section {
+  margin-top: 45px;
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  line-height: 1.8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e1ddcf;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 5px 18px #00000008;
+}
+
+.card .icon {
+  font-size: 32px;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin: 12px 0 8px;
+}
+
+.card p {
+  line-height: 1.7;
+}
+
+.cadet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.cadet-card {
+  overflow: hidden;
+  border: 1px solid #c8a64f;
+  border-radius: 16px;
+  background: linear-gradient(155deg, #173e2c, #0b1912);
+  color: #f8f0d6;
+  box-shadow: 0 10px 25px #08140f22;
+}
+
+.cadet-card::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, #8f6a1b, #ffe681, #b68724);
+}
+
+.cadet-card-top {
+  padding: 22px 18px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cadet-avatar {
+  flex: 0 0 65px;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #e2c56c;
+  border-radius: 50%;
+  background: #ffffff12;
+  color: #f4d878;
+  font: bold 22px Georgia, serif;
+}
+
+.cadet-card h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: #fff3c9;
+  overflow-wrap: anywhere;
+}
+
+.cadet-number {
+  color: #e6c76e;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.cadet-card-details {
+  border-top: 1px solid #e0c76b44;
+  padding: 15px 18px;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e3e8df;
+}
+
+.cadet-card-details strong {
+  color: #e6c76e;
+}
+
+.cadet-profile-button {
+  margin: 0 18px 18px;
+  padding: 12px;
+  width: calc(100% - 36px);
+  border: 1px solid #e2c56c;
+  border-radius: 9px;
+  background: var(--gold);
+  color: #17241f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cadet-profile-button:hover {
+  background: var(--light-gold);
+}
+
+.profile-dialog {
+  width: min(540px, calc(100% - 28px));
+  padding: 0;
+  border: 1px solid var(--gold);
+  border-radius: 18px;
+  background: #10271c;
+  color: #f8f0d6;
+  box-shadow: 0 24px 80px #0008;
+}
+
+.profile-dialog::backdrop {
+  background: #030805cc;
+}
+
+.profile-dialog-head {
+  padding: 25px;
+  background: linear-gradient(135deg, #214b35, #0b1912);
+  border-bottom: 1px solid #d6a84f88;
+}
+
+.profile-dialog-head h2 {
+  color: var(--light-gold);
+  overflow-wrap: anywhere;
+}
+
+.profile-dialog-body {
+  padding: 22px 25px;
+  line-height: 1.8;
+}
+
+.profile-edit-note {
+  background: #ffffff0d;
+  border-left: 3px solid var(--gold);
+  padding: 12px;
+  border-radius: 7px;
+  color: #dce6d8;
+  font-size: 14px;
+}
+
+.profile-dialog-actions {
+  padding: 0 25px 25px;
+}
+
+.profile-close {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #17241f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gallery-photo {
+  display: block;
+  width: 100%;
+  max-height: 700px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #10271c;
+}
+
+.gallery-item {
+  margin: 25px 0;
+}
+
+.note {
+  background: #e9eee5;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px;
+  line-height: 1.7;
+}
+
+.login-panel {
+  max-width: 480px;
+  margin: 25px auto;
+  padding: 28px;
+  background: white;
+  border: 1px solid #e1ddcf;
+  border-radius: 16px;
+}
+
+.login-panel label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: bold;
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #89968d;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.login-panel button {
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--green);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-panel .secondary-button {
+  margin-left: 8px;
+  background: var(--gold);
+  color: #17241f;
+}
+
+.login-status {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #e9eee5;
+  line-height: 1.6;
+}
+
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 28px 16px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+@media (max-width: 800px) {
+  .cards,
+  .cadet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  main {
+    padding: 22px 14px 40px;
+  }
+
+  .cards,
+  .cadet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav a {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+
+  .house-flag {
+    gap: 8px;
+    padding: 16px 8px;
+  }
+
+  .flag-lion {
+    font-size: 35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img
+    class="crest"
+    src="1000110959.jpg"
+    alt="Golden Valiants lion logo"
+  >
+
+  <div class="house-flag">
+    <span class="flag-lion" aria-hidden="true">🦁</span>
+    <span>
+      <strong>VALIANTS</strong>
+      <small>VAISHALI HOUSE · 22ND BATCH</small>
+    </span>
+  </div>
+
+  <div class="kicker">VALIANTS · SAINIK SCHOOL GOPALGANJ</div>
+
+  <h1>VAISHALI HOUSE<br>22ND BATCH</h1>
+
+  <p>
+    One house. One batch. A lifetime of memories.
+  </p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="#home" data-page="home">Home</a>
+  <a href="#login" data-page="login">Login</a>
+  <a href="#gallery" data-page="gallery">Gallery</a>
+  <a href="#notices" data-page="notices">Notices</a>
+</nav>
+
+<main>
+
+  <!-- HOME PAGE -->
+  <div class="page active" id="home">
+
+    <div class="hero">
+      <span class="pill">VAISHALI HOUSE · 22ND BATCH</span>
+
+      <h2>Brothers by the house,<br>connected for life.</h2>
+
+      <p>
+        This website celebrates the cadets of Vaishali House's
+        22nd Batch at Sainik School Gopalganj. It is a place to
+        celebrate friendship, shared experiences, achievements,
+        and memories that stay with us long after our school days.
+      </p>
+    </div>
+
+    <section>
+      <h2 class="section-title">This Is Our Batch</h2>
+
+      <p class="intro">
+        A batch is more than a number. It is the people who stood
+        together, learned together, competed together, and made
+        ordinary days unforgettable.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🤝</div>
+          <h3>Brotherhood</h3>
+          <p>
+            Different personalities, one house spirit, and
+            friendships built day by day.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎖️</div>
+          <h3>Discipline & Spirit</h3>
+          <p>
+            Growing through teamwork, responsibility, courage,
+            and determination.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🌟</div>
+          <h3>Our Memories</h3>
+          <p>
+            Small moments, big laughs, challenges, celebrations,
+            and stories only our batch understands.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="batch-members">
+      <h2 class="section-title">Our Batch Members</h2>
+
+      <p class="intro">
+        Meet the members of Vaishali House 22nd Batch.
+        Open a profile to see a cadet's details.
+      </p>
+
+      <div class="cadet-grid" id="cadet-grid"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Memories That Stay</h2>
+
+      <p class="intro">
+        From everyday house life to special events, every shared
+        moment is part of our story.
+      </p>
+
+      <div class="note">
+        “The batch may move forward, but the house bond stays forever.”
+      </div>
+    </section>
+
+  </div>
+
+  <!-- LOGIN PAGE -->
+  <div class="page" id="login">
+
+    <section>
+      <h2 class="section-title">Batch Member Login</h2>
+
+      <p class="intro">
+        Try the demo login to preview the signed-in message.
+        This is not a real account system.
+      </p>
+
+      <form class="login-panel" id="login-form">
+
+        <label for="member-name">Name or batch username</label>
+        <input
+          id="member-name"
+          name="username"
+          autocomplete="username"
+          required
+        >
+
+        <label for="member-password">Password</label>
+        <input
+          id="member-password"
+          name="password"
+          type="password"
+          autocomplete="off"
+          required
+        >
+
+        <button type="submit">Preview Login</button>
+
+        <button
+          class="secondary-button"
+          id="logout-button"
+          type="button"
+          hidden
+        >Log Out</button>
+
+        <p class="login-status" id="login-message" role="status">
+          Demo mode: enter any username and password to preview
+          the signed-in state. Do not use a real password.
+        </p>
+
+      </form>
+    </section>
+
+  </div>
+
+  <!-- GALLERY PAGE -->
+  <div class="page" id="gallery">
+
+    <section>
+      <h2 class="section-title">Our Gallery</h2>
+
+      <p class="intro">
+        Memories of Vaishali House 22nd Batch.
+      </p>
+
+      <figure class="gallery-item">
+        <img
+          class="gallery-photo"
+          src="1000091766(1).jpg"
+          alt="Vaishali House cadets with their instructor"
+          onerror="this.style.display='none';document.getElementById('photo-error').hidden=false;"
+        >
+
+        <figcaption class="intro" style="text-align:center">
+          Vaishali House · 22nd Batch — Memories of the Valiants
+        </figcaption>
+
+        <p id="photo-error" class="note" hidden>
+          Photo not found. Upload your group photo to the repository
+          and make sure its filename is 1000091766(1).jpg.
+        </p>
+      </figure>
+
+    </section>
+
+  </div>
+
+  <!-- NOTICES PAGE -->
+  <div class="page" id="notices">
+
+    <section>
+      <h2 class="section-title">Notices & Announcements</h2>
+
+      <p class="intro">
+        Important updates for the Vaishali House 22nd Batch
+        will appear here.
+      </p>
+
+      <div class="note">
+        <strong>No notices yet.</strong><br>
+        New batch announcements can be added here when available.
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  <strong>VAISHALI HOUSE 22ND BATCH · VALIANTS</strong><br>
+  Sainik School Gopalganj<br>
+  Made with pride, friendship, and house spirit.
+</footer>
+
+<!-- CADET PROFILE POPUP -->
+<dialog class="profile-dialog" id="cadet-profile-dialog">
+
+  <div class="profile-dialog-head">
+    <div class="cadet-avatar" id="profile-dialog-avatar">VC</div>
+    <h2 id="profile-dialog-name">Cadet Profile</h2>
+    <div class="cadet-number" id="profile-dialog-number"></div>
+  </div>
+
+  <div class="profile-dialog-body">
+    <p><strong>House:</strong> Vaishali House</p>
+    <p><strong>Batch:</strong> 22nd Batch</p>
+    <p><strong>School:</strong> Sainik School Gopalganj</p>
+
+    <p class="profile-edit-note">
+      This is a starter profile. A personal photo, hobbies,
+      achievements, role, and short biography can be added later.
+    </p>
+  </div>
+
+  <div class="profile-dialog-actions">
+    <button class="profile-close" id="close-profile-dialog" type="button">
+      Close Profile
+    </button>
+  </div>
+
+</dialog>
+
+<script>
+/* NAVIGATION */
+
+const pageLinks = document.querySelectorAll("nav [data-page]");
+
+function showPage(pageName) {
+  const validPages = ["home", "login", "gallery", "notices"];
+
+  if (!validPages.includes(pageName)) {
+    pageName = "home";
+  }
+
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.toggle("active", page.id === pageName);
+  });
+
+  pageLinks.forEach(link => {
+    if (link.dataset.page === pageName) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  history.replaceState(null, "", "#" + pageName);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+pageLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    showPage(link.dataset.page);
+  });
+});
+
+/* BATCH MEMBERS */
+
+const cadets = [
+  ["Rishabh Kumar", "1655"],
+  ["Rajeev Kumar", "1659"],
+  ["Abhinav Kumar", "1663"],
+  ["Ranveer Kumar", "1667"],
+  ["Ayansh Shekhar", "1673"],
+  ["Tejash Gautam", "1676"],
+  ["Prahlad Kumar", "1680"],
+  ["Divya Bharti", "1682"],
+  ["Prakash Bhaskar", "1685"],
+  ["Adarsh Kumar", "1692"],
+  ["Shaurya Kumar", "1697"],
+  ["Vanshika", "1698"],
+  ["Himanshu Kumar", "1703"],
+  ["Bhavya Kumari", "1704"],
+  ["Kunal Kumar", "1713"],
+  ["Harshita Gahlaut", "1723"],
+  ["Shubham Kumar", "1736"]
+];
+
+function getInitials(name) {
+  return name
+    .split(/\s+/)
+    .map(part => part[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
+const cadetGrid = document.getElementById("cadet-grid");
+const profileDialog = document.getElementById("cadet-profile-dialog");
+
+cadets.forEach(([name, number]) => {
+  const card = document.createElement("article");
+  card.className = "cadet-card";
+
+  const top = document.createElement("div");
+  top.className = "cadet-card-top";
+
+  const avatar = document.createElement("div");
+  avatar.className = "cadet-avatar";
+  avatar.textContent = getInitials(name);
+  avatar.setAttribute("aria-hidden", "true");
+
+  const heading = document.createElement("div");
+
+  const title = document.createElement("h3");
+  title.textContent = name;
+
+  const id = document.createElement("div");
+  id.className = "cadet-number";
+  id.textContent = "CADET NO. " + number;
+
+  heading.append(title, id);
+  top.append(avatar, heading);
+
+  const details = document.createElement("div");
+  details.className = "cadet-card-details";
+
+  details.innerHTML = `
+    <div><strong>HOUSE</strong> · Vaishali House</div>
+    <div><strong>BATCH</strong> · 22nd Batch</div>
+    <div><strong>SCHOOL</strong> · Sainik School Gopalganj</div>
+  `;
+
+  const button = document.createElement("button");
+  button.className = "cadet-profile-button";
+  button.type = "button";
+  button.textContent = "View Cadet Profile ↗";
+
+  button.addEventListener("click", () => {
+    document.getElementById("profile-dialog-avatar").textContent =
+      getInitials(name);
+
+    document.getElementById("profile-dialog-name").textContent = name;
+
+    document.getElementById("profile-dialog-number").textContent =
+      "CADET NO. " + number;
+
+    if (typeof profileDialog.showModal === "function") {
+      profileDialog.showModal();
+    } else {
+      alert(
+        name +
+        "\nCadet No. " + number +
+        "\nVaishali House · 22nd Batch"
+      );
+    }
+  });
+
+  card.append(top, details, button);
+  cadetGrid.appendChild(card);
+});
+
+/* PROFILE POPUP */
+
+document.getElementById("close-profile-dialog")
+  .addEventListener("click", () => {
+    profileDialog.close();
+  });
+
+profileDialog.addEventListener("click", event => {
+  if (event.target === profileDialog) {
+    profileDialog.close();
+  }
+});
+
+/* DEMO LOGIN — NOT SECURE AUTHENTICATION */
+
+document.getElementById("login-form")
+  .addEventListener("submit", event => {
+    event.preventDefault();
+
+    const username =
+      document.getElementById("member-name").value.trim();
+
+    const password =
+      document.getElementById("member-password").value;
+
+    if (!username || !password) {
+      return;
+    }
+
+    document.getElementById("login-message").textContent =
+      "Welcome, " + username +
+      "! You are signed in to the demo preview only. " +
+      "This is not a secure account and your login is not saved.";
+
+    document.getElementById("logout-button").hidden = false;
+
+    document.getElementById("member-password").value = "";
+  });
+
+document.getElementById("logout-button")
+  .addEventListener("click", () => {
+    document.getElementById("login-message").textContent =
+      "You are logged out of the demo preview. Do not use a real password here.";
+
+    document.getElementById("member-name").value = "";
+    document.getElementById("member-password").value = "";
+
+    document.getElementById("logout-button").hidden = true;
+  });
+
+/* OPEN PAGE FROM URL HASH */
+
+const requestedPage = location.hash.slice(1);
+
+if (["home", "login", "gallery", "notices"].includes(requestedPage)) {
+  showPage(requestedPage);
+}
+</script>
+
+</body>
+</html>
